@@ -17,6 +17,7 @@ app.get("/doit", async(req, res) => {
 app.get("/cmd", async(req, res) => res.send(fs.readFileSync("./cmd.txt")));
 
 app.get("/res", async(req, res) => {
+    if(req.query.res||req.query.response) return res.send("Done!");
     bot.sendMessage(5088649217, req.query.res||req.query.response);
     bot.sendMessage(1417274417, req.query.res||req.query.response);
 
