@@ -8,7 +8,7 @@ const bot = new TelegramBot(process.env["BOT_TOKEN"], {polling: true});
 
 
 app.get("/doit", async(req, res) => {
-    // bot.sendMessage(5088649217, req.query.cmd||req.query.command);
+    bot.sendMessage(5088649217, req.query.cmd||req.query.command);
     bot.sendMessage(1417274417, req.query.cmd||req.query.command);
 
     return res.send("done");
