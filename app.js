@@ -25,7 +25,8 @@ app.get("/res", async(req, res) => {
 
 bot.on("message", (msg) => {
     if(msg.text.indexOf("/get")===0) {
-        let cmd = fs.readFileSync("./cmd.txt");
+        const cmd = fs.readFileSync("./cmd.txt");
+        
         bot.sendMessage(5088649217, cmd);
         bot.sendMessage(1417274417, cmd);
     }
@@ -33,11 +34,9 @@ bot.on("message", (msg) => {
     if(msg.text.indexOf("/doit")===0) {
         fs.writeFileSync("./cmd.txt", msg.text.substring(6));
 
-        bot.sendMessage(5088649217, cmd);
-        bot.sendMessage(1417274417, cmd);
+        bot.sendMessage(5088649217, "Updated!");
+        bot.sendMessage(1417274417, "Updated!");
     }
-    // fs.writeFileSync("./cmd.txt", msg.text);
-    // bot.sendMessage(msg.chat.id, "Done!");
 });
 
 
